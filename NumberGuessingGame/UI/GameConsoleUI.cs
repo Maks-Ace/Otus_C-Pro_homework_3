@@ -47,7 +47,7 @@ namespace NumberGuessingGame.UI
             Console.Clear();
             Console.WriteLine("*** Угадайка ***");
 
-            Console.Write("\n\rВведите команду:");
+            Console.Write("\n\rВведите команду: ");
 
             var userInput = Console.ReadLine();
 
@@ -63,7 +63,22 @@ namespace NumberGuessingGame.UI
             var userInput = Console.ReadLine();
             if (int.TryParse(userInput, out int parseResult))
             {
-                _gameService.MakeGuess(parseResult);
+                var result = _gameService.MakeGuess(parseResult);
+
+                switch (result)
+                {
+                    case GuessResult.TooLow:
+                        Console.WriteLine("\n\rЗагаданное число больше");
+                        break;
+                    case GuessResult.TooHigh:
+                        Console.WriteLine("\n\rЗагаданное число меньше");
+                        break;
+                    default:
+                        return;
+                }
+
+                Console.WriteLine("\n\rнажмите любую кнопку что бы продолжить...");
+                Console.ReadKey();
             }
             else
             {
