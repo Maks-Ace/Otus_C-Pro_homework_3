@@ -5,14 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NumberGuessingGame.Core.Services
+namespace NumberGuessingGame.Infrastucture
 {
-    internal class RandomNumberGeneratorService : IRandomGeneratorService
+    internal class RandomNumberGeneratorService_Base : IRandomGeneratorService
     {
 
         private readonly Random _random;
 
-        public RandomNumberGeneratorService()
+        public RandomNumberGeneratorService_Base()
         {
             _random = new Random();
         }
@@ -20,7 +20,7 @@ namespace NumberGuessingGame.Core.Services
 
         public int Generate(int MinRangeValue, int MaxRangeValue)
         {
-            return _random.Next(MinRangeValue, MaxRangeValue+ 1);
+            return _random.Next(MinRangeValue, MaxRangeValue + 1);
         }
     }
 }

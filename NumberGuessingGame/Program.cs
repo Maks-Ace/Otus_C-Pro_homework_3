@@ -2,6 +2,7 @@
 using NumberGuessingGame.Core.Entities;
 using NumberGuessingGame.Core.Interfaces;
 using NumberGuessingGame.Core.Services;
+using NumberGuessingGame.Infrastucture;
 using NumberGuessingGame.UI;
 
 namespace NumberGuessingGame
@@ -12,7 +13,8 @@ namespace NumberGuessingGame
         {
             GameSettings settings = GetSettingsFromConfig();
 
-            var randomGenerator = new RandomNumberGeneratorService();
+            //var randomGenerator = new RandomNumberGeneratorService();
+            var randomGenerator = new RandomNumberGeneratorService_ForTests();
 
             var gameService = new GameService(settings, randomGenerator);
 

@@ -12,9 +12,9 @@ namespace NumberGuessingGame.UI
     internal class GameConsoleUI
     {
         private bool _isRunning = true;
-        private IGameService _gameService;
+        private IGuessGameService _gameService;
 
-        public GameConsoleUI(IGameService gameService)
+        public GameConsoleUI(IGuessGameService gameService)
         {
             _gameService = gameService;
         }

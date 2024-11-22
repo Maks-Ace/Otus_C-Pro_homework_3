@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace NumberGuessingGame.Core.Services
 {
-    public class GameService : IGameService
+    public class GameService : IGuessGameService
     {
         private IGameSettings _settings;
         private Game _game;

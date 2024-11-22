@@ -8,12 +8,8 @@ using System.Threading.Tasks;
 
 namespace NumberGuessingGame.Core.Interfaces
 {
-    public interface IGameService
+    public interface IGuessGameService : IBaseGameService
     {
-        void StartNewGame();
-
-        void EndGame();
-
         GameStatus GetGameStatus();
 
         GuessResult MakeGuess(int guess);
